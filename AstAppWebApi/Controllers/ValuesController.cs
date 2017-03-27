@@ -15,7 +15,7 @@ namespace AstAppWebApi.Controllers
         {
             bool res = RequestContext.Principal.Identity.IsAuthenticated;
             res = User.Identity.IsAuthenticated;
-
+            
             return new string[] { "value1", "value2" };
         }
 
