@@ -14,7 +14,7 @@ namespace AstAppSharedEntities
 
         public virtual ICollection<ApplicationUser> Users { get; set; }
         public virtual Pool Pool { get; set; }
-        public virtual Item Item { get; set; }
+        public virtual Item Item { get; set; } 
 
         public virtual ICollection<PoolState> PoolState { get; set; }
         public virtual ICollection<UserJoinPoolRoom> PoolRoomUsers { get; set; }
