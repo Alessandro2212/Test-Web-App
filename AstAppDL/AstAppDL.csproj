@@ -63,6 +63,10 @@
     <Compile Include="DataContexts\ApplicationDbMigrations\201703240004228_UserFounderFK.Designer.cs">
       <DependentUpon>201703240004228_UserFounderFK.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\ApplicationDbMigrations\201704092149120_PoolIsActive.cs" />
+    <Compile Include="DataContexts\ApplicationDbMigrations\201704092149120_PoolIsActive.Designer.cs">
+      <DependentUpon>201704092149120_PoolIsActive.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\ApplicationDbMigrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +85,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DataContexts\ApplicationDbMigrations\201703240004228_UserFounderFK.resx">
       <DependentUpon>201703240004228_UserFounderFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\ApplicationDbMigrations\201704092149120_PoolIsActive.resx">
+      <DependentUpon>201704092149120_PoolIsActive.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

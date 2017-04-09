@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace AstAppWebApi.Controllers
 {
     public class HomeController : Controller
     {
+
+
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
@@ -18,9 +21,17 @@ namespace AstAppWebApi.Controllers
         [Authorize]
         public ActionResult IndexAuthorize()
         {
-            ViewBag.Title = "Home Page";
+            try
+            {
+                string userId = User.Identity.GetUserId();
 
-            bool res = User.Identity.IsAuthenticated;
+
+
+            }
+            catch
+            {
+
+            }
 
             return View();
         }

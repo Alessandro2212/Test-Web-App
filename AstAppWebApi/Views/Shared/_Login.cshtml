@@ -5,7 +5,8 @@
                                                         new AjaxOptions
                                                         {
                                                             HttpMethod = "POST",
-                                                            OnSuccess = "LoginPerformed(data)"
+                                                            OnSuccess = "LoginPerformed(data)",
+                                                            OnFailure = "ErrorHandler(data)"
                                                         },
                                                         new
                                                         {
@@ -45,6 +46,4 @@
         </div>
     }
 </div>
-@section scripts{   
-    <script src="~/Scripts/Login/TestLogin.js"></script>
-}
+

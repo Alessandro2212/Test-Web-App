@@ -22,7 +22,6 @@ using System.Web.Security;
 
 namespace AstAppWebApi.Controllers
 {
-    //[Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
@@ -363,7 +362,8 @@ namespace AstAppWebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email,
+                IsFounder = model.IsFounder };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 

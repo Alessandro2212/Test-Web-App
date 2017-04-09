@@ -13,6 +13,7 @@ namespace AstAppSharedEntities
         [Required]
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsActive { get; set; }
 
         public virtual ICollection<Item> Items { get; set; }
         public virtual ApplicationUser PoolFounder { get; set; }

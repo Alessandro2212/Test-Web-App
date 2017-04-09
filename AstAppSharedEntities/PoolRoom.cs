@@ -21,7 +21,7 @@ namespace AstAppSharedEntities
 
         public PoolRoom()
         {
-            this.PoolState = new HashSet<PoolState>();
+            PoolState = new HashSet<PoolState>();
         }
     }
 }
