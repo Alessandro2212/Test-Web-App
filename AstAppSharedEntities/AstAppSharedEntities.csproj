@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -58,20 +62,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationUser.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Offer.cs" />
-    <Compile Include="Pool.cs" />
-    <Compile Include="PoolRoom.cs" />
-    <Compile Include="PoolState.cs" />
+    <Compile Include="DTOs\PoolDTO.cs" />
+    <Compile Include="EntityModels\ApplicationUser.cs" />
+    <Compile Include="EntityModels\Item.cs" />
+    <Compile Include="EntityModels\Offer.cs" />
+    <Compile Include="EntityModels\Pool.cs" />
+    <Compile Include="EntityModels\PoolRoom.cs" />
+    <Compile Include="EntityModels\PoolState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeAndEnums\Enum.cs" />
-    <Compile Include="UserJoinPoolRoom.cs" />
+    <Compile Include="EntityModels\UserJoinPoolRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -32,11 +32,13 @@ namespace AstAppWebApi
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/bundles/unobtrusive-ajax").Include(
-                      "~/Scripts/jquery.unobtrusive-ajax.js"));
+                      "~/Scripts/jquery.unobtrusive-ajax.js",
+                      "~/Scripts/jquery.unobtrusive-ajax.min.js"));
 
             //Generics
             bundles.Add(new ScriptBundle("~/bundles/Generics").Include(
-                "~/Scripts/Generic/AjaxUtils.js"              
+                "~/Scripts/Generic/AjaxUtils.js",
+                "~/Scripts/Generic/DataTableUtils.js"
                 ));
 
             //AstApp Defaults
@@ -44,7 +46,6 @@ namespace AstAppWebApi
                 "~/Scripts/Shared/AstAppObjAndStruct.js",
                 "~/Scripts/Shared/AstAppShared.js"
                 ));
-
             
 
             //CSS BUNDLES

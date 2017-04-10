@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AstAppSharedEntities
+namespace AstAppSharedEntities.EntityModels
 {
     public class PoolRoom
     {

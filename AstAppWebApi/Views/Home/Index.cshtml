@@ -1,14 +1,15 @@
 ﻿<div class="jumbotron">
-    <h1>AST APP!</h1>
-    <p class="lead">Welcome to the Ast App Web Site! Join the community</p>
+    <h1>FANTAST APP!</h1>
+    <p class="lead">Welcome to the FantAst App Web Site! Join the community!</p>
 </div>
-<div class="row">
-    
 
-
+<div id="indexAuthorize">
+<!--Insert partial view for authorized users-->
 </div>
+
 <script>
     _homeIndexAuthorizeAddress = '@Url.Action("IndexAuthorize", "Home")';
+    _homeGetUserPoolsAddress = '@Url.Action("GetUserPools", "Home")';
 </script>
 @section scripts{
     <script src="~/Scripts/Login/PerformedLogin.js"></script>

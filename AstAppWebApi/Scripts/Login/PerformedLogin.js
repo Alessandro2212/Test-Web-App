@@ -8,7 +8,7 @@ function LoginPerformed(data) {
     CloseModal('#loginModal');
     //Hide login/register link
 
-    //Call web server to get pools
+    //Call web server to get partial view for pools
     $.ajax({
         url: _homeIndexAuthorizeAddress,
         type: "GET",
@@ -16,10 +16,11 @@ function LoginPerformed(data) {
         datatype: 'json',
         headers: getHeaders(),
         success: function (data) {
-            try {
-
-                alert('success');
-
+            try {               
+                $('#indexAuthorize').html(data);
+                //chiamata asincrona per prendere le liste delle pool
+                //e popolarle nella partialview
+                LoadUserPools();
 
             } catch (err) {
                 alert("Error on success LoginPerformed: " + err.message);
@@ -27,6 +28,28 @@ function LoginPerformed(data) {
         },
         error: function (error) {
             
+            alert("Error on error LoginPerformed: " + error.message);
+        }
+    });
+}
+
+
+function LoadUserPools() {
+    $.ajax({
+        url: _homeGetUserPoolsAddress,
+        type: "GET",
+        data: {},
+        datatype: 'json',
+        headers: getHeaders(),
+        success: function (data) {
+            try {                
+                alert('works fine')
+            } catch (err) {
+                alert("Error on success LoginPerformed: " + err.message);
+            }
+        },
+        error: function (error) {
+
             alert("Error on error LoginPerformed: " + error.message);
         }
     });

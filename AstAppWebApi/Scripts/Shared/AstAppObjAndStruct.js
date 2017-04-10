@@ -8,3 +8,4 @@ var emptyReq = {
 
 //HOME PAGE URLs
 var _homeIndexAuthorizeAddress;
+var _homeGetUserPoolsAddress;

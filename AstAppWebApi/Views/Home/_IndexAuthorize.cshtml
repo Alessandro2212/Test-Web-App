@@ -1,0 +1,27 @@
+﻿@model AstAppWebApi.Models.UserVM
+
+@if (Model.IsFounder)
+{
+    <div class="row" id="poolContainer">
+        <div id="leftPools">
+
+        </div>
+        <div id="rightPools">
+
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div>
+
+        </div>
+    </div>
+}
+
+@section scripts{
+    
+}
+
+

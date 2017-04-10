@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using AstAppWebApi.Models;
-using AstAppSharedEntities;
+using AstAppSharedEntities.EntityModels;
 using AstAppDL.DataContexts;
 
 namespace AstAppWebApi

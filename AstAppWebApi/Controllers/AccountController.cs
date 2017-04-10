@@ -16,7 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using AstAppWebApi.Models;
 using AstAppWebApi.Providers;
 using AstAppWebApi.Results;
-using AstAppSharedEntities;
+using AstAppSharedEntities.EntityModels;
 using System.Text;
 using System.Web.Security;
 

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static AstAppSharedEntities.TypeAndEnums.Enum;
 
-namespace AstAppSharedEntities
+namespace AstAppSharedEntities.EntityModels
 {
     public class UserJoinPoolRoom
     {

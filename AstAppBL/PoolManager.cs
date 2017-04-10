@@ -1,5 +1,6 @@
 ﻿using AstAppDL.DataContexts;
-using AstAppSharedEntities;
+using AstAppSharedEntities.DTOs;
+using AstAppSharedEntities.EntityModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +26,9 @@ namespace AstAppBL
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public List<Pool> GetPoolOfUser(string userId)
+        public List<PoolDTO> GetPoolOfUser(string userId)
         {
-            List<Pool> pools = new List<Pool>();
+            List<PoolDTO> pools = new List<PoolDTO>();
             try
             {
                 using (ApplicationDbContext ctx = new ApplicationDbContext())
@@ -39,11 +40,19 @@ namespace AstAppBL
                     if (user != null)
                     {
                         var pool = (from p in ctx.Pools
-                                     where p.PoolFounder == user && p.IsActive
+                                     where p.PoolFounder!=null &&
+                                           p.PoolFounder.Id == user.Id && 
+                                           p.IsActive
                                     select p).ToList();
+
                         if (pool != null &&
                             pool.Any())
-                            pools = pool;
+                        {
+                            pool.ForEach(pl =>
+                            {
+                                pools.Add(pl);
+                            });
+                        }                          
                     }
                 }
             }
@@ -59,9 +68,9 @@ namespace AstAppBL
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public List<Pool> GetAvailablePools(string userId)
+        public List<PoolDTO> GetAvailablePools(string userId)
         {
-            List<Pool> pools = new List<Pool>();
+            List<PoolDTO> pools = new List<PoolDTO>();
             try
             {
                 using (ApplicationDbContext ctx = new ApplicationDbContext())
@@ -73,11 +82,19 @@ namespace AstAppBL
                     if (user != null)
                     {
                         var pool = (from p in ctx.Pools
-                                    where p.PoolFounder != user && p.IsActive
+                                    where p.PoolFounder != null &&
+                                           p.PoolFounder.Id != user.Id &&
+                                           p.IsActive
                                     select p).ToList();
+
                         if (pool != null &&
                             pool.Any())
-                            pools = pool;
+                        {
+                            pool.ForEach(pl =>
+                            {
+                                pools.Add(pl);
+                            });
+                        }
                     }
                 }
             }
@@ -92,9 +109,9 @@ namespace AstAppBL
         /// get all active pools
         /// </summary>
         /// <returns></returns>
-        public List<Pool> GetAllAvailablePools()
+        public List<PoolDTO> GetAllAvailablePools()
         {
-            List<Pool> pools = new List<Pool>();
+            List<PoolDTO> pools = new List<PoolDTO>();
             try
             {
                 using (ApplicationDbContext ctx = new ApplicationDbContext())
@@ -104,9 +121,14 @@ namespace AstAppBL
                                 select p).ToList();
 
                     if (pool != null &&
-                        pool.Any())
-                        pools = pool;
-                    
+                            pool.Any())
+                    {
+                        pool.ForEach(pl =>
+                        {
+                            pools.Add(pl);
+                        });
+                    }
+
                 }
             }
             catch (Exception excp)
